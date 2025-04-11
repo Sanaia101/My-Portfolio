@@ -1,0 +1,16 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+@keyframes bgFloat {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: center 10px;
+  }
+  100% {
+    background-position: center;
+  }
+}
