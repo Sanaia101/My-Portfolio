@@ -30,6 +30,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://Sanaia101.github.io/My-Portfolio",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+  },
+
   "browserslist": [
     ">0.2%",
     "not dead",
