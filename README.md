@@ -10,7 +10,9 @@ Hi there! Welcome to my portfolio — a creative and interactive space designed 
 
 ✨ Highlights:
 🧠 Meet the AI Buddy — it can answer fun facts and share insights about me
+>
 💻📱 Dual-optimized: desktop and mobile each offer their own unique experience
+>
 🖱️ Explore draggable windows, hidden surprises, and retro-inspired design touches
 
 Thanks so much for stopping by — I hope you enjoy exploring as much as I enjoyed building it
