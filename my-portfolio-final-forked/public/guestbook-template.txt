@@ -1,0 +1,7 @@
+👋 Welcome to my guestbook!
+
+Name: ___________________________
+Message: ________________________
+Would you visit again? (Yes/No): ____
+
+Thanks for stopping by! ✨
