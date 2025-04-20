@@ -210,14 +210,16 @@ const App: React.FC = () => {
       <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowTrash(true)}
+          onClick={() => setShowTrash(false)}
+          onTouchStart={() => setShowTrash(false)}
         >
           <span className="text-2xl">🗑️</span>
           <span className="text-[10px] mt-1 text-white">Trash</span>
         </div>
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowNotepad(true)}
+          onClick={() => setShowNotepad(false)}
+          onTouchStart={() => setShowNotepad(false)}
         >
           <span className="text-2xl">📝</span>
           <span className="text-[10px] mt-1 text-white">Notepad</span>
@@ -225,14 +227,16 @@ const App: React.FC = () => {
 
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowBrowser(true)}
+          onClick={() => setShowBrowser(false)}
+          onTouchStart={() => setShowBrowser(false)}
         >
           <span className="text-2xl">🌐</span>
           <span className="text-[10px] mt-1 text-white">Browser</span>
         </div>
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowDownloads(true)}
+          onClick={() => setShowDownloads(false)}
+          onTouchStart={() => setShowDownloads(false)}
         >
           <span className="text-2xl">📂</span>
           <span className="text-[10px] mt-1 text-white">Downloads</span>
@@ -256,7 +260,8 @@ const App: React.FC = () => {
         </div>
         <div
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowPhotos(true)}
+          onClick={() => setShowPhotos(false)}
+          onTouchStart={() => setShowPhotos(false)}
         >
           <span className="text-2xl">🖼️</span>
           <span className="text-[10px] mt-1 text-white">Photos</span>
@@ -280,6 +285,7 @@ const App: React.FC = () => {
                   setShowSkills(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowSkills(false)}
                 className="hover:underline"
               >
                 ⚙️ Skills
@@ -291,6 +297,7 @@ const App: React.FC = () => {
                   setShowResume(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowResume(false)}
                 className="hover:underline"
               >
                 💾 Resume
@@ -302,6 +309,7 @@ const App: React.FC = () => {
                   setShowContact(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowContact(false)}
                 className="hover:underline"
               >
                 📞 Contact
@@ -313,6 +321,7 @@ const App: React.FC = () => {
                   setShowEducation(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowEducation(false)}
                 className="hover:underline"
               >
                 🎓 Education
@@ -324,6 +333,7 @@ const App: React.FC = () => {
                   setShowAiBuddy(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowAiBuddy(false)}
                 className="hover:underline"
               >
                 🧠 AI Buddy
@@ -335,6 +345,7 @@ const App: React.FC = () => {
                   setShowPhotos(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowPhotos(false)}
                 className="hover:underline"
               >
                 🖼️ Photos
@@ -346,6 +357,7 @@ const App: React.FC = () => {
                   setShowDownloads(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowDownloads(false)}
                 className="hover:underline"
               >
                 📂 Downloads
@@ -357,6 +369,7 @@ const App: React.FC = () => {
                   setShowBrowser(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowBrowser(false)}
                 className="hover:underline"
               >
                 🌐 Browser
@@ -368,6 +381,7 @@ const App: React.FC = () => {
                   setShowTrash(true);
                   setShowStartMenu(false);
                 }}
+                onTouchStart={() => setShowTrash(false)}
                 className="hover:underline"
               >
                 🗑️ Trash
@@ -418,12 +432,13 @@ const App: React.FC = () => {
           style={{ zIndex: zIndices["resume"] || 1 }}
           onMouseDown={() => bringToFront("resume")}
         >
-          <Draggable handle=".window-header">
+          <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[36rem] h-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>💾 Resume</span>
                 <button
                   onClick={() => setShowResume(false)}
+                  onTouchStart={() => setShowResume(false)}
                   className="text-white font-bold"
                 >
                   ✖
@@ -443,12 +458,13 @@ const App: React.FC = () => {
           style={{ zIndex: zIndices["projects"] || 1 }}
           onMouseDown={() => bringToFront("projects")}
         >
-          <Draggable handle=".window-header">
+          <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📁 Projects</span>
                 <button
                   onClick={() => setShowProjects(false)}
+                  onTouchStart={() => setShowProjects(false)}
                   className="text-white font-bold"
                 >
                   ✖
@@ -509,12 +525,13 @@ const App: React.FC = () => {
           style={{ zIndex: zIndices["skills"] || 1 }}
           onMouseDown={() => bringToFront("skills")}
         >
-          <Draggable handle=".window-header">
+          <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>⚙️ Skills</span>
                 <button
                   onClick={() => setShowSkills(false)}
+                  onTouchStart={() => setShowSkills(false)}
                   className="text-white font-bold"
                 >
                   ✖
@@ -558,12 +575,13 @@ const App: React.FC = () => {
           style={{ zIndex: zIndices["education"] || 1 }}
           onMouseDown={() => bringToFront("education")}
         >
-          <Draggable handle=".window-header">
+          <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>🎓 Education</span>
                 <button
                   onClick={() => setShowEducation(false)}
+                  onTouchStart={() => setShowEducation(false)}
                   className="text-white font-bold"
                 >
                   ✖
@@ -593,12 +611,13 @@ const App: React.FC = () => {
           style={{ zIndex: zIndices["contact"] || 1 }}
           onMouseDown={() => bringToFront("contact")}
         >
-          <Draggable handle=".window-header">
+          <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📞 Contact</span>
                 <button
                   onClick={() => setShowContact(false)}
+                  onTouchStart={() => setShowContact(false)}
                   className="text-white font-bold"
                 >
                   ✖
@@ -659,6 +678,7 @@ const App: React.FC = () => {
           <nav className="hidden sm:flex gap-4 text-white font-semibold text-xs">
             <button
               onClick={() => setShowStartMenu((prev) => !prev)}
+              onTouchStart={() => setStartMenu(false)}
               className="bg-pink-800 hover:bg-pink-700 px-3 py-1 rounded shadow flex items-center gap-2"
             >
               <span className="text-lg">🌸</span>
@@ -666,30 +686,35 @@ const App: React.FC = () => {
             </button>
             <button
               onClick={() => setShowResume(true)}
+              onTouchStart={() => setShowResume(false)}
               className="hover:underline"
             >
               💾 Resume
             </button>
             <button
               onClick={() => setShowProjects(true)}
+              onTouchStart={() => setShowProjects(false)}
               className="hover:underline"
             >
               📁 Projects
             </button>
             <button
               onClick={() => setShowContact(true)}
+              onTouchStart={() => setShowContact(false)}
               className="hover:underline"
             >
               📞 Contact
             </button>
             <button
               onClick={() => setShowSkills(true)}
+              onTouchStart={() => setShowSkills(false)}
               className="hover:underline"
             >
               ⚙️ Skills
             </button>
             <button
               onClick={() => setShowEducation(true)}
+              onTouchStart={() => setShowEducation(false)}
               className="hover:underline"
             >
               🎓 Education
@@ -707,12 +732,13 @@ const App: React.FC = () => {
 
       {/* AI BUDDY WINDOW */}
       {showAiBuddy && (
-        <Draggable handle=".window-header">
+        <Draggable handle=".window-header" cancel=".close-btn">
           <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white rounded-xl border border-pink-300 shadow-2xl z-50 flex flex-col overflow-hidden">
             <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
               <span>AI Buddy</span>
               <button
                 onClick={() => setShowAiBuddy(false)}
+                onTouchStart={() => setAiBuddy(false)}
                 className="text-white font-bold"
               >
                 ✖
