@@ -12,11 +12,12 @@ const NotepadWindow: React.FC<NotepadWindowProps> = ({ onClose }) => {
         <div className="notepad-header bg-yellow-300 text-black px-4 py-2 font-bold flex justify-between items-center cursor-move rounded-t-md">
           <span>📌 Notepad</span>
           <button
-            onClick={onClose}
-            className="text-black hover:text-red-600 font-bold text-lg close-btn"
-          >
-            ✕
-          </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
         </div>
         <div className="p-4 text-gray-900">
           <ul className="list-disc list-inside space-y-2 text-sm">
