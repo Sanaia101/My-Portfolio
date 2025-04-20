@@ -12,9 +12,13 @@ const DownloadsWindow: React.FC<DownloadsWindowProps> = ({ onClose }) => {
         {/* Header */}
         <div className="window-header bg-pink-600 text-white p-3 flex justify-between items-center text-sm font-semibold">
           <span>📂 Retro Downloads</span>
-          <button onClick={onClose} className="text-white font-bold close-btn">
-            ✖
-          </button>
+          <button
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
         </div>
 
         {/* Content */}
