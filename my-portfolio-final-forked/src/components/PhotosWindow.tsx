@@ -32,9 +32,13 @@ const PhotosWindow: React.FC<PhotosWindowProps> = ({ onClose }) => {
         {/* Header */}
         <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-sm font-semibold">
           <span>🖼️ Photo Viewer</span>
-          <button onClick={onClose} className="text-white font-bold close-btn">
-            ✖
-          </button>
+          <button
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
         </div>
 
         {/* Slideshow */}
