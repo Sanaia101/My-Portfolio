@@ -49,6 +49,16 @@ const App: React.FC = () => {
     });
   };
 
+  const toggleWindow = (
+    setter: React.Dispatch<React.SetStateAction<boolean>>,
+    current: boolean,
+    key: string
+  ) => {
+    if (!current) bringToFront(key);
+    setter(!current);
+  };
+
+
   const bootLines: string[] = [
     "Initializing PinkOS...",
     "Verifying system integrity ✔",
@@ -209,28 +219,28 @@ const App: React.FC = () => {
       {/* SIDEBAR ICONS */}
       <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
         <button
-          onClick={() => toggleWindow(setShowTrash, showTrash)}
+          onClick={() => toggleWindow(setShowTrash, showTrash, "trash")}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
           <span className="text-2xl">🗑️</span>
           <span className="text-[10px] mt-1 text-white">Trash</span>
         </button>
         <button
-          onClick={() => toggleWindow(setShowNotepad, showNotepad)}
+          onClick={() => toggleWindow(setShowNotepad, showNotepad, "notepad")}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
           <span className="text-2xl">📝</span>
           <span className="text-[10px] mt-1 text-white">Notepad</span>
         </button>
         <button
-          onClick={() => toggleWindow(setShowBrowser, showBrowser)}
+          onClick={() => toggleWindow(setShowBrowser, showBrowser, "browser")}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
           <span className="text-2xl">🌐</span>
           <span className="text-[10px] mt-1 text-white">Browser</span>
         </button>
         <button
-          onClick={() => toggleWindow(setShowDownloads, showDownloads)}
+          onClick={() => toggleWindow(setShowDownloads, showDownloads, "downloads")}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
           <span className="text-2xl">📂</span>
@@ -247,7 +257,7 @@ const App: React.FC = () => {
                 },
               ]);
             }
-            toggleWindow(setShowAiBuddy, showAiBuddy);
+            toggleWindow(setShowAiBuddy, showAiBuddy, "ai")
           }}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
@@ -255,7 +265,7 @@ const App: React.FC = () => {
           <span className="text-[10px] mt-1 text-white">AI Buddy</span>
         </button>
         <button
-          onClick={() => toggleWindow(setShowPhotos, showPhotos)}
+          onClick={() => toggleWindow(setShowPhotos, showPhotos, "photos")}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
           <span className="text-2xl">🖼️</span>
