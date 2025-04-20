@@ -257,7 +257,7 @@ const App: React.FC = () => {
                 },
               ]);
             }
-            toggleWindow(setShowAiBuddy, showAiBuddy, "ai")
+            toggleWindow(setShowAiBuddy, showAiBuddy, "ai");
           }}
           className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
         >
@@ -272,6 +272,9 @@ const App: React.FC = () => {
           <span className="text-[10px] mt-1 text-white">Photos</span>
         </button>
       </div>
+    </main>
+  );
+};
 
 
 
