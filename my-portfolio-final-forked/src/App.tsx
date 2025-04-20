@@ -414,6 +414,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["photos"] || 1 }}
           onMouseDown={() => bringToFront("photos")}
+          onTouchStart={() => bringToFront("photos")}
         >
           <PhotosWindow onClose={() => setShowPhotos(false)} />
         </div>
@@ -423,6 +424,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["trash"] || 1 }}
           onMouseDown={() => bringToFront("trash")}
+          onTouchStart={() => bringToFront("trash")}
         >
           <TrashBinWindow onClose={() => setShowTrash(false)} />
         </div>
@@ -432,6 +434,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["browser"] || 1 }}
           onMouseDown={() => bringToFront("browser")}
+          onTouchStart={() => bringToFront("browser")}
         >
           <BrowserWindow onClose={() => setShowBrowser(false)} />
         </div>
@@ -441,6 +444,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["downloads"] || 1 }}
           onMouseDown={() => bringToFront("downloads")}
+          onTouchStart={() => bringToFront("downloads")}
         >
           <DownloadsWindow onClose={() => setShowDownloads(false)} />
         </div>
@@ -450,6 +454,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["resume"] || 1 }}
           onMouseDown={() => bringToFront("resume")}
+          onTouchStart={() => bringToFront("resume")}
         >
           <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[36rem] h-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
@@ -476,6 +481,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["projects"] || 1 }}
           onMouseDown={() => bringToFront("projects")}
+          onTouchStart={() => bringToFront("projects")}
         >
           <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
@@ -543,6 +549,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["skills"] || 1 }}
           onMouseDown={() => bringToFront("skills")}
+          onTouchStart={() => bringToFront("skills")}
         >
           <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
@@ -593,6 +600,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["education"] || 1 }}
           onMouseDown={() => bringToFront("education")}
+          onTouchStart={() => bringToFront("education")}
         >
           <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
@@ -629,6 +637,7 @@ const App: React.FC = () => {
         <div
           style={{ zIndex: zIndices["contact"] || 1 }}
           onMouseDown={() => bringToFront("contact")}
+          onTouchStart={() => bringToFront("contact")}
         >
           <Draggable handle=".window-header" cancel=".close-btn">
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
