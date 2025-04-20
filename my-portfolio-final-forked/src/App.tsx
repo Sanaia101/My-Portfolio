@@ -426,6 +426,16 @@ const App: React.FC = () => {
           <BrowserWindow onClose={() => setShowBrowser(false)} />
         </div>
       )}
+      {showNotepad && (
+  <div
+    style={{ zIndex: zIndices["notepad"] || 1 }}
+    onMouseDown={() => bringToFront("notepad")}
+    onTouchStart={() => bringToFront("notepad")}
+  >
+    <NotepadWindow onClose={() => setShowNotepad(false)} />
+  </div>
+)}
+
 
       {showDownloads && (
         <div
