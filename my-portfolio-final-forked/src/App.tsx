@@ -207,66 +207,84 @@ const App: React.FC = () => {
       ></button>
 
       {/* SIDEBAR ICONS */}
-      <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowTrash(false)}
-          onTouchStart={() => setShowTrash(false)}
-        >
-          <span className="text-2xl">🗑️</span>
-          <span className="text-[10px] mt-1 text-white">Trash</span>
-        </div>
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowNotepad(false)}
-          onTouchStart={() => setShowNotepad(false)}
-        >
-          <span className="text-2xl">📝</span>
-          <span className="text-[10px] mt-1 text-white">Notepad</span>
-        </div>
+<div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
+  <button
+    onClick={() => setShowTrash(false)}
+    onTouchStart={() => setShowTrash(false)}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">🗑️</span>
+    <span className="text-[10px] mt-1 text-white">Trash</span>
+  </button>
 
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowBrowser(false)}
-          onTouchStart={() => setShowBrowser(false)}
-        >
-          <span className="text-2xl">🌐</span>
-          <span className="text-[10px] mt-1 text-white">Browser</span>
-        </div>
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowDownloads(false)}
-          onTouchStart={() => setShowDownloads(false)}
-        >
-          <span className="text-2xl">📂</span>
-          <span className="text-[10px] mt-1 text-white">Downloads</span>
-        </div>
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => {
-            if (!showAiBuddy && aiMessages.length === 0) {
-              setAiMessages([
-                {
-                  sender: "ai",
-                  text: "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
-                },
-              ]);
-            }
-            setShowAiBuddy(true);
-          }}
-        >
-          <span className="text-2xl">🧠</span>
-          <span className="text-[10px] mt-1 text-white">AI Buddy</span>
-        </div>
-        <div
-          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform"
-          onClick={() => setShowPhotos(false)}
-          onTouchStart={() => setShowPhotos(false)}
-        >
-          <span className="text-2xl">🖼️</span>
-          <span className="text-[10px] mt-1 text-white">Photos</span>
-        </div>
-      </div>
+  <button
+    onClick={() => setShowNotepad(false)}
+    onTouchStart={() => setShowNotepad(false)}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">📝</span>
+    <span className="text-[10px] mt-1 text-white">Notepad</span>
+  </button>
+
+  <button
+    onClick={() => setShowBrowser(false)}
+    onTouchStart={() => setShowBrowser(false)}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">🌐</span>
+    <span className="text-[10px] mt-1 text-white">Browser</span>
+  </button>
+
+  <button
+    onClick={() => setShowDownloads(false)}
+    onTouchStart={() => setShowDownloads(false)}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">📂</span>
+    <span className="text-[10px] mt-1 text-white">Downloads</span>
+  </button>
+
+  <button
+    onClick={() => {
+      if (!showAiBuddy && aiMessages.length === 0) {
+        setAiMessages([
+          {
+            sender: "ai",
+            text:
+              "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
+          },
+        ]);
+      }
+      setShowAiBuddy(true);
+    }}
+    onTouchStart={() => {
+      if (!showAiBuddy && aiMessages.length === 0) {
+        setAiMessages([
+          {
+            sender: "ai",
+            text:
+              "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
+          },
+        ]);
+      }
+      setShowAiBuddy(true);
+    }}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">🧠</span>
+    <span className="text-[10px] mt-1 text-white">AI Buddy</span>
+  </button>
+
+  <button
+    onClick={() => setShowPhotos(false)}
+    onTouchStart={() => setShowPhotos(false)}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+  >
+    <span className="text-2xl">🖼️</span>
+    <span className="text-[10px] mt-1 text-white">Photos</span>
+  </button>
+</div>
+
 
       {/* START MENU */}
       {showStartMenu && (
