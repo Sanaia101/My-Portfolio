@@ -151,47 +151,58 @@ const App: React.FC = () => {
       )}
       <div className="absolute inset-0 z-0 bg-[url('/bg-pattern.png')] opacity-20 animate-bgMove" />
       <button
-        {...handleClose(setShowResume)}
+        onClick={() => setShowResume(false)}
+        onTouchStart={() => setShowResume(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowSkills)}
+        onClick={() => setShowSkills(false)}
+        onTouchStart={() => setShowSkills(false)
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowEducation)}
+        onClick={() => setShowEducation(false)}
+        onTouchStart={() => setShowEducation(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowProjects)}
+        onClick={() => setShowProjects(false)}
+        onTouchStart={() => setShowProjects(false)
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowContact)}
+        onClick={() => setShowContact(false)}
+        onTouchStart={() => setShowContact(false)
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowAiBuddy)}
+        onClick={() => setShowAIBuddy(false)}
+        onTouchStart={() => setAIBuddy(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowTrash)}
+        onClick={() => setShowTrash(false)}
+        onTouchStart={() => setShowTrash(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowBrowser)}
+        onClick={() => setShowBrowser(false)}
+        onTouchStart={() => setShowBrowser(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowDownloads)}
+        onClick={() => setShowDownloads(false)}
+        onTouchStart={() => setShowDownloads(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowPhotos)}
+        onClick={() => setShowPhotos(false)}
+        onTouchStart={() => setShowPhotos(false)}
         className="text-white font-bold"
       ></button>
       <button
-        {...handleClose(setShowNotepad)}
+        onClick={() => setShowNotepad(false)}
+        onTouchStart={() => setShowNotepad(false)}
         className="text-white font-bold"
       ></button>
 
