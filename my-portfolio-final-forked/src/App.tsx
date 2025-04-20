@@ -207,83 +207,61 @@ const App: React.FC = () => {
       ></button>
 
       {/* SIDEBAR ICONS */}
-<div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
-  <button
-    onClick={() => setShowTrash(true)}
-    onTouchStart={() => setShowTrash(true)}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">🗑️</span>
-    <span className="text-[10px] mt-1 text-white">Trash</span>
-  </button>
-
-  <button
-    onClick={() => setShowNotepad(true)}
-    onTouchStart={() => setShowNotepad(true)}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">📝</span>
-    <span className="text-[10px] mt-1 text-white">Notepad</span>
-  </button>
-
-  <button
-    onClick={() => setShowBrowser(true)}
-    onTouchStart={() => setShowBrowser(true)}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">🌐</span>
-    <span className="text-[10px] mt-1 text-white">Browser</span>
-  </button>
-
-  <button
-    onClick={() => setShowDownloads(true)}
-    onTouchStart={() => setShowDownloads(true)}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">📂</span>
-    <span className="text-[10px] mt-1 text-white">Downloads</span>
-  </button>
-
-  <button
-    onClick={() => {
-      if (!showAiBuddy && aiMessages.length === 0) {
-        setAiMessages([
-          {
-            sender: "ai",
-            text:
-              "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
-          },
-        ]);
-      }
-      setShowAiBuddy(true);
-    }}
-    onTouchStart={() => {
-      if (!showAiBuddy && aiMessages.length === 0) {
-        setAiMessages([
-          {
-            sender: "ai",
-            text:
-              "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
-          },
-        ]);
-      }
-      setShowAiBuddy(true);
-    }}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">🧠</span>
-    <span className="text-[10px] mt-1 text-white">AI Buddy</span>
-  </button>
-
-  <button
-    onClick={() => setShowPhotos(true)}
-    onTouchStart={() => setShowPhotos(true)}
-    className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
-  >
-    <span className="text-2xl">🖼️</span>
-    <span className="text-[10px] mt-1 text-white">Photos</span>
-  </button>
-</div>
+      <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
+        <button
+          onClick={() => toggleWindow(setShowTrash, showTrash)}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">🗑️</span>
+          <span className="text-[10px] mt-1 text-white">Trash</span>
+        </button>
+        <button
+          onClick={() => toggleWindow(setShowNotepad, showNotepad)}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">📝</span>
+          <span className="text-[10px] mt-1 text-white">Notepad</span>
+        </button>
+        <button
+          onClick={() => toggleWindow(setShowBrowser, showBrowser)}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">🌐</span>
+          <span className="text-[10px] mt-1 text-white">Browser</span>
+        </button>
+        <button
+          onClick={() => toggleWindow(setShowDownloads, showDownloads)}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">📂</span>
+          <span className="text-[10px] mt-1 text-white">Downloads</span>
+        </button>
+        <button
+          onClick={() => {
+            if (!showAiBuddy && aiMessages.length === 0) {
+              setAiMessages([
+                {
+                  sender: "ai",
+                  text:
+                    "Hey there! I’m your AI Buddy, happy to chat about all things Sanaia. 🌸\n",
+                },
+              ]);
+            }
+            toggleWindow(setShowAiBuddy, showAiBuddy);
+          }}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">🧠</span>
+          <span className="text-[10px] mt-1 text-white">AI Buddy</span>
+        </button>
+        <button
+          onClick={() => toggleWindow(setShowPhotos, showPhotos)}
+          className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
+        >
+          <span className="text-2xl">🖼️</span>
+          <span className="text-[10px] mt-1 text-white">Photos</span>
+        </button>
+      </div>
 
 
 
@@ -690,8 +668,6 @@ const App: React.FC = () => {
       {showPhotos && <PhotosWindow onClose={() => setShowPhotos(false)} />}
 
       {showTrash && <TrashBinWindow onClose={() => setShowTrash(false)} />}
-
-      {showBrowser && <BrowserWindow onClose={() => setShowBrowser(false)} />}
 
       {showNotepad && <NotepadWindow onClose={() => setShowNotepad(false)} />}
 
