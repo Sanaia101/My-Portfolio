@@ -1,16 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Draggable from "react-draggable";
-
 import TrashBinWindow from "./TrashBinWindow";
+
 import BrowserWindow from "./components/BrowserWindow";
 import DownloadsWindow from "./components/DownloadsWindow";
 import PhotosWindow from "./components/PhotosWindow";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Draggable from "react-draggable";
 import NotepadWindow from "./components/NotepadWindow";
+const handleClose = (
+  setStateFn: React.Dispatch<React.SetStateAction<boolean>>
+) => {
+  return {
+    onClick: () => setStateFn(false),
+    onTouchStart: () => setStateFn(false),
+  };
+};
 
 const App: React.FC = () => {
   const [showAiBuddy, setShowAiBuddy] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
+
   const [aiMessages, setAiMessages] = useState<
     { sender: "user" | "ai"; text: string }[]
   >([]);
@@ -27,19 +36,10 @@ const App: React.FC = () => {
   const [showBrowser, setShowBrowser] = useState(false);
   const [showDownloads, setShowDownloads] = useState(false);
   const [showPhotos, setShowPhotos] = useState(false);
+  const [zIndices, setZIndices] = useState<Record<string, number>>({});
+  const [zCounter, setZCounter] = useState(100); // start at 100+
   const [showProjects, setShowProjects] = useState(false);
   const [showNotepad, setShowNotepad] = useState(false);
-  const [zIndices, setZIndices] = useState<Record<string, number>>({});
-  const [zCounter, setZCounter] = useState(100);
-
-  const bootLines: string[] = [
-    "Initializing PinkOS...",
-    "Verifying system integrity ✔",
-    "Launching Sanaia's Desktop ✔",
-    "Loading UI... ✔",
-    "Welcome, User. 🌸",
-    "C:\\SANAIA>_",
-  ];
 
   const bringToFront = (key: string) => {
     setZCounter((prev) => {
@@ -54,31 +54,19 @@ const App: React.FC = () => {
     current: boolean,
     key: string
   ) => {
-    if (current) {
-      setter(false);
-    } else {
-      bringToFront(key);
-      setter(true);
-    }
+    if (!current) bringToFront(key);
+    setter(!current);
   };
 
-  const getAIResponse = (message: string): string => {
-    return `I'm not sure, but here's what I know about "${message}"... 🌸`;
-  };
 
-  const handleUserMessage = () => {
-    if (!userInput.trim()) return;
-
-    setAiMessages((prev) => [...prev, { sender: "user", text: userInput }]);
-    setUserInput("");
-    setAiTyping(true);
-
-    setTimeout(() => {
-      const response = getAIResponse(userInput);
-      setAiMessages((prev) => [...prev, { sender: "ai", text: response }]);
-      setAiTyping(false);
-    }, 1000);
-  };
+  const bootLines: string[] = [
+    "Initializing PinkOS...",
+    "Verifying system integrity ✔",
+    "Launching Sanaia's Desktop ✔",
+    "Loading UI... ✔",
+    "Welcome, User. 🌸",
+    "C:\\SANAIA>_",
+  ];
 
   useEffect(() => {
     let index = 0;
@@ -92,6 +80,43 @@ const App: React.FC = () => {
     }, 700);
     return () => clearInterval(interval);
   }, []);
+
+  const getAIResponse = (question: string) => {
+    const q = question.toLowerCase();
+    if (q.includes("name")) return "Her name is Sanaia Washington.";
+    if (q.includes("college") || q.includes("school"))
+      return "She studies at the University of Houston, majoring in Computer Information Systems.";
+    if (q.includes("graduate")) return "She is graduating in May 2025!";
+    if (q.includes("gpa"))
+      return "Her current GPA is 3.4 with a 3.9 in her major.";
+    if (q.includes("internship"))
+      return "She interned for two years with the IT team at Flynn Group, supporting Arby's.";
+    if (q.includes("security"))
+      return "She’s currently preparing for her CompTIA Security+ certification.";
+    if (q.includes("goal"))
+      return "Her goal is to get a Master's degree in Cybersecurity.";
+    if (q.includes("skills"))
+      return "She’s skilled in React, EJS, Vue, and full-stack development.";
+    if (q.includes("food") || q.includes("favorite food"))
+      return "Sanaia’s favorite foods are Asian cuisine, soul food, and wings!";
+    if (q.includes("hobby") || q.includes("fun") || q.includes("free time"))
+      return "Sanaia enjoys crocheting, reading, traveling, and building Legos in her free time!";
+    return "Sorry, I don’t have that info yet! 🌸";
+  };
+
+  const handleUserMessage = () => {
+    if (!userInput.trim()) return;
+    const question = userInput.trim();
+    setAiMessages((prev) => [...prev, { sender: "user", text: question }]);
+    setUserInput("");
+    setAiTyping(true);
+
+    setTimeout(() => {
+      const response = getAIResponse(question);
+      setAiMessages((prev) => [...prev, { sender: "ai", text: response }]);
+      setAiTyping(false);
+    }, 1000);
+  };
 
   if (!booted) {
     return (
@@ -110,9 +135,87 @@ const App: React.FC = () => {
     );
   }
 
-
   return (
-    <main>
+    <main
+      className="min-h-screen relative overflow-hidden text-gray-900 font-sans p-4"
+      style={{
+        backgroundImage: "url('/bg-mario.gif')",
+        backgroundSize: "100% calc(100vh - 2.5rem)", // full width, minus taskbar height
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top center",
+        backgroundAttachment: "fixed", // optional if you want the bg to stay still
+      }}
+    >
+      {alertMessage && (
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-[9999]">
+          <div className="bg-black text-white border border-pink-400 p-3 rounded-lg flex items-center gap-2 shadow-xl">
+            <img alt="Alert Icon" className="w-24 h-auto" />
+            <span className="text-sm">{alertMessage}</span>
+            <button
+              className="ml-auto text-white text-lg font-bold"
+              onClick={() => setAlertMessage(null)}
+              onTouchStart={() => setAlertMessage(null)}
+            ></button>
+          </div>
+        </div>
+      )}
+      <div className="absolute inset-0 z-0 bg-[url('/bg-pattern.png')] opacity-20 animate-bgMove" />
+      <button
+        onClick={() => setShowResume(false)}
+        onTouchStart={() => setShowResume(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowSkills(false)}
+        onTouchStart={() => setShowSkills(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowEducation(false)}
+        onTouchStart={() => setShowEducation(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowProjects(false)}
+        onTouchStart={() => setShowProjects(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowContact(false)}
+        onTouchStart={() => setShowContact(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowAiBuddy(false)}
+        onTouchStart={() => setShowAiBuddy(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowTrash(false)}
+        onTouchStart={() => setShowTrash(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowBrowser(false)}
+        onTouchStart={() => setShowBrowser(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowDownloads(false)}
+        onTouchStart={() => setShowDownloads(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowPhotos(false)}
+        onTouchStart={() => setShowPhotos(false)}
+        className="text-white font-bold"
+      ></button>
+      <button
+        onClick={() => setShowNotepad(false)}
+        onTouchStart={() => setShowNotepad(false)}
+        className="text-white font-bold"
+      ></button>
+
       {/* SIDEBAR ICONS */}
       <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
         <button
@@ -571,9 +674,15 @@ const App: React.FC = () => {
         </div>
       )}
 
-     
+      {showPhotos && <PhotosWindow onClose={() => setShowPhotos(false)} />}
 
-    
+      {showTrash && <TrashBinWindow onClose={() => setShowTrash(false)} />}
+
+      {showNotepad && <NotepadWindow onClose={() => setShowNotepad(false)} />}
+
+      {showDownloads && (
+        <DownloadsWindow onClose={() => setShowDownloads(false)} />
+      )}
 
       {/* TASKBAR */}
 
