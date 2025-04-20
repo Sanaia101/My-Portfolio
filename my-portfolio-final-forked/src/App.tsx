@@ -61,6 +61,20 @@ const App: React.FC = () => {
     "C:\\SANAIA>_",
   ];
 
+  const handleUserMessage = () => {
+  if (!userInput.trim()) return;
+
+  setAiMessages((prev) => [...prev, { sender: "user", text: userInput }]);
+  setUserInput("");
+  setAiTyping(true);
+
+  setTimeout(() => {
+    const response = getAIResponse(userInput);
+    setAiMessages((prev) => [...prev, { sender: "ai", text: response }]);
+    setAiTyping(false);
+  }, 1000);
+};
+
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
