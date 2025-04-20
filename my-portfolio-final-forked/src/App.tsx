@@ -465,12 +465,8 @@ const App: React.FC = () => {
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[36rem] h-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>💾 Resume</span>
-                <button
-  onPointerDown={onClose}
-  className="text-white font-bold close-btn"
->
-  ✖
-</button>
+                <button onPointerDown={() => setShowResume(false)}>✖</button>
+
 
               </div>
               <iframe
@@ -492,12 +488,8 @@ const App: React.FC = () => {
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📁 Projects</span>
-                <button
-  onPointerDown={onClose}
-  className="text-white font-bold close-btn"
->
-  ✖
-</button>
+                <button onPointerDown={() => setShowResume(false)}>✖</button>
+
 
               </div>
 
@@ -560,12 +552,8 @@ const App: React.FC = () => {
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>⚙️ Skills</span>
-                <button
-  onPointerDown={onClose}
-  className="text-white font-bold close-btn"
->
-  ✖
-</button>
+                <button onPointerDown={() => setShowResume(false)}>✖</button>
+
 
               </div>
               <div className="p-4 space-y-3 text-sm text-gray-800">
@@ -611,12 +599,8 @@ const App: React.FC = () => {
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[30rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>🎓 Education</span>
-                <button
-  onPointerDown={onClose}
-  className="text-white font-bold close-btn"
->
-  ✖
-</button>
+                <button onPointerDown={() => setShowResume(false)}>✖</button>
+
 
               </div>
               <div className="p-4 text-sm leading-relaxed text-gray-800">
@@ -648,12 +632,8 @@ const App: React.FC = () => {
             <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📞 Contact</span>
-                <button
-  onPointerDown={onClose}
-  className="text-white font-bold close-btn"
->
-  ✖
-</button>
+                <button onPointerDown={() => setShowResume(false)}>✖</button>
+
 
               </div>
               <div className="p-4 space-y-3 text-sm text-gray-800">
