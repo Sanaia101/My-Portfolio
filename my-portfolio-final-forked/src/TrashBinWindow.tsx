@@ -50,9 +50,13 @@ const TrashBinWindow: React.FC<TrashBinWindowProps> = ({ onClose }) => {
       <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
         <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
           <span>{full ? "🗑️ Trash (FULL)" : "🗑️ Trash"}</span>
-          <button onClick={onClose} className="text-white font-bold close-btn">
-          ✖
-          </button>
+          <button
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
 
         </div>
 
