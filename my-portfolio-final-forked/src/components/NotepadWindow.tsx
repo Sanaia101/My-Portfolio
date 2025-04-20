@@ -13,7 +13,7 @@ const NotepadWindow: React.FC<NotepadWindowProps> = ({ onClose }) => {
           <span>📌 Notepad</span>
           <button
             onClick={onClose}
-            className="text-black hover:text-red-600 font-bold text-lg"
+            className="text-black hover:text-red-600 font-bold text-lg close-btn"
           >
             ✕
           </button>
