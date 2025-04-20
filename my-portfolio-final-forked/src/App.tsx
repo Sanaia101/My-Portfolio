@@ -272,10 +272,6 @@ const App: React.FC = () => {
           <span className="text-[10px] mt-1 text-white">Photos</span>
         </button>
       </div>
-    </main>
-  );
-};
-
 
 
       {/* START MENU */}
