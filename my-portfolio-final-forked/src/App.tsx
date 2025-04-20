@@ -674,15 +674,7 @@ const App: React.FC = () => {
         </div>
       )}
 
-      {showPhotos && <PhotosWindow onClose={() => setShowPhotos(false)} />}
-
-      {showTrash && <TrashBinWindow onClose={() => setShowTrash(false)} />}
-
-      {showNotepad && <NotepadWindow onClose={() => setShowNotepad(false)} />}
-
-      {showDownloads && (
-        <DownloadsWindow onClose={() => setShowDownloads(false)} />
-      )}
+     
 
       {/* TASKBAR */}
 
