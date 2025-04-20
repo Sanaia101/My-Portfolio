@@ -157,7 +157,7 @@ const App: React.FC = () => {
       ></button>
       <button
         onClick={() => setShowSkills(false)}
-        onTouchStart={() => setShowSkills(false)
+        onTouchStart={() => setShowSkills(false)}
         className="text-white font-bold"
       ></button>
       <button
@@ -167,12 +167,12 @@ const App: React.FC = () => {
       ></button>
       <button
         onClick={() => setShowProjects(false)}
-        onTouchStart={() => setShowProjects(false)
+        onTouchStart={() => setShowProjects(false)}
         className="text-white font-bold"
       ></button>
       <button
         onClick={() => setShowContact(false)}
-        onTouchStart={() => setShowContact(false)
+        onTouchStart={() => setShowContact(false)}
         className="text-white font-bold"
       ></button>
       <button
