@@ -678,7 +678,7 @@ const App: React.FC = () => {
           <nav className="hidden sm:flex gap-4 text-white font-semibold text-xs">
             <button
               onClick={() => setShowStartMenu((prev) => !prev)}
-              onTouchStart={() => setStartMenu(false)}
+              onTouchStart={() => setShowStartMenu(false)}
               className="bg-pink-800 hover:bg-pink-700 px-3 py-1 rounded shadow flex items-center gap-2"
             >
               <span className="text-lg">🌸</span>
@@ -738,7 +738,7 @@ const App: React.FC = () => {
               <span>AI Buddy</span>
               <button
                 onClick={() => setShowAiBuddy(false)}
-                onTouchStart={() => setAiBuddy(false)}
+                onTouchStart={() => setShowAiBuddy(false)}
                 className="text-white font-bold"
               >
                 ✖
