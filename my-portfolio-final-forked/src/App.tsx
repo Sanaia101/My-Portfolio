@@ -1,10 +1,11 @@
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import Draggable from "react-draggable";
+
 import TrashBinWindow from "./TrashBinWindow";
 import BrowserWindow from "./components/BrowserWindow";
 import DownloadsWindow from "./components/DownloadsWindow";
 import PhotosWindow from "./components/PhotosWindow";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Draggable from "react-draggable";
 import NotepadWindow from "./components/NotepadWindow";
 
 const App: React.FC = () => {
@@ -26,10 +27,19 @@ const App: React.FC = () => {
   const [showBrowser, setShowBrowser] = useState(false);
   const [showDownloads, setShowDownloads] = useState(false);
   const [showPhotos, setShowPhotos] = useState(false);
-  const [zIndices, setZIndices] = useState<Record<string, number>>({});
-  const [zCounter, setZCounter] = useState(100);
   const [showProjects, setShowProjects] = useState(false);
   const [showNotepad, setShowNotepad] = useState(false);
+  const [zIndices, setZIndices] = useState<Record<string, number>>({});
+  const [zCounter, setZCounter] = useState(100);
+
+  const bootLines: string[] = [
+    "Initializing PinkOS...",
+    "Verifying system integrity ✔",
+    "Launching Sanaia's Desktop ✔",
+    "Loading UI... ✔",
+    "Welcome, User. 🌸",
+    "C:\\SANAIA>_",
+  ];
 
   const bringToFront = (key: string) => {
     setZCounter((prev) => {
@@ -52,28 +62,23 @@ const App: React.FC = () => {
     }
   };
 
-  const bootLines: string[] = [
-    "Initializing PinkOS...",
-    "Verifying system integrity ✔",
-    "Launching Sanaia's Desktop ✔",
-    "Loading UI... ✔",
-    "Welcome, User. 🌸",
-    "C:\\SANAIA>_",
-  ];
+  const getAIResponse = (message: string): string => {
+    return `I'm not sure, but here's what I know about "${message}"... 🌸`;
+  };
 
   const handleUserMessage = () => {
-  if (!userInput.trim()) return;
+    if (!userInput.trim()) return;
 
-  setAiMessages((prev) => [...prev, { sender: "user", text: userInput }]);
-  setUserInput("");
-  setAiTyping(true);
+    setAiMessages((prev) => [...prev, { sender: "user", text: userInput }]);
+    setUserInput("");
+    setAiTyping(true);
 
-  setTimeout(() => {
-    const response = getAIResponse(userInput);
-    setAiMessages((prev) => [...prev, { sender: "ai", text: response }]);
-    setAiTyping(false);
-  }, 1000);
-};
+    setTimeout(() => {
+      const response = getAIResponse(userInput);
+      setAiMessages((prev) => [...prev, { sender: "ai", text: response }]);
+      setAiTyping(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     let index = 0;
@@ -104,6 +109,7 @@ const App: React.FC = () => {
       </div>
     );
   }
+
 
   return (
     <main>
