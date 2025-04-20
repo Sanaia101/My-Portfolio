@@ -177,7 +177,7 @@ const App: React.FC = () => {
       ></button>
       <button
         onClick={() => setShowAiBuddy(false)}
-        onTouchStart={() => setAiBuddy(false)}
+        onTouchStart={() => setShowAiBuddy(false)}
         className="text-white font-bold"
       ></button>
       <button
