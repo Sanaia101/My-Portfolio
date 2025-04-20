@@ -209,8 +209,8 @@ const App: React.FC = () => {
       {/* SIDEBAR ICONS */}
 <div className="fixed top-20 left-2 flex flex-col items-center gap-6 z-40">
   <button
-    onClick={() => setShowTrash(false)}
-    onTouchStart={() => setShowTrash(false)}
+    onClick={() => setShowTrash(true)}
+    onTouchStart={() => setShowTrash(true)}
     className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
   >
     <span className="text-2xl">🗑️</span>
@@ -218,8 +218,8 @@ const App: React.FC = () => {
   </button>
 
   <button
-    onClick={() => setShowNotepad(false)}
-    onTouchStart={() => setShowNotepad(false)}
+    onClick={() => setShowNotepad(true)}
+    onTouchStart={() => setShowNotepad(true)}
     className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
   >
     <span className="text-2xl">📝</span>
@@ -227,8 +227,8 @@ const App: React.FC = () => {
   </button>
 
   <button
-    onClick={() => setShowBrowser(false)}
-    onTouchStart={() => setShowBrowser(false)}
+    onClick={() => setShowBrowser(true)}
+    onTouchStart={() => setShowBrowser(true)}
     className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
   >
     <span className="text-2xl">🌐</span>
@@ -236,8 +236,8 @@ const App: React.FC = () => {
   </button>
 
   <button
-    onClick={() => setShowDownloads(false)}
-    onTouchStart={() => setShowDownloads(false)}
+    onClick={() => setShowDownloads(true)}
+    onTouchStart={() => setShowDownloads(true)}
     className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
   >
     <span className="text-2xl">📂</span>
@@ -276,14 +276,15 @@ const App: React.FC = () => {
   </button>
 
   <button
-    onClick={() => setShowPhotos(false)}
-    onTouchStart={() => setShowPhotos(false)}
+    onClick={() => setShowPhotos(true)}
+    onTouchStart={() => setShowPhotos(true)}
     className="flex flex-col items-center cursor-pointer hover:scale-110 transition-transform focus:outline-none"
   >
     <span className="text-2xl">🖼️</span>
     <span className="text-[10px] mt-1 text-white">Photos</span>
   </button>
 </div>
+
 
 
       {/* START MENU */}
