@@ -466,12 +466,12 @@ const App: React.FC = () => {
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>💾 Resume</span>
                 <button
-                  onClick={() => setShowResume(false)}
-                  onTouchStart={() => setShowResume(false)}
-                  className="text-white font-bold"
-                >
-                  ✖
-                </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
               </div>
               <iframe
                 src="/SanaiaWashingtonResume.pdf"
@@ -493,12 +493,12 @@ const App: React.FC = () => {
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📁 Projects</span>
                 <button
-                  onClick={() => setShowProjects(false)}
-                  onTouchStart={() => setShowProjects(false)}
-                  className="text-white font-bold"
-                >
-                  ✖
-                </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
               </div>
 
               <div className="p-4 text-sm text-gray-800">
@@ -561,12 +561,12 @@ const App: React.FC = () => {
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>⚙️ Skills</span>
                 <button
-                  onClick={() => setShowSkills(false)}
-                  onTouchStart={() => setShowSkills(false)}
-                  className="text-white font-bold"
-                >
-                  ✖
-                </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
               </div>
               <div className="p-4 space-y-3 text-sm text-gray-800">
                 <h4 className="font-semibold text-pink-700 text-base">
@@ -612,12 +612,12 @@ const App: React.FC = () => {
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>🎓 Education</span>
                 <button
-                  onClick={() => setShowEducation(false)}
-                  onTouchStart={() => setShowEducation(false)}
-                  className="text-white font-bold"
-                >
-                  ✖
-                </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
               </div>
               <div className="p-4 text-sm leading-relaxed text-gray-800">
                 <h4 className="font-semibold text-pink-700">
@@ -649,12 +649,12 @@ const App: React.FC = () => {
               <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
                 <span>📞 Contact</span>
                 <button
-                  onClick={() => setShowContact(false)}
-                  onTouchStart={() => setShowContact(false)}
-                  className="text-white font-bold"
-                >
-                  ✖
-                </button>
+  onPointerDown={onClose}
+  className="text-white font-bold close-btn"
+>
+  ✖
+</button>
+
               </div>
               <div className="p-4 space-y-3 text-sm text-gray-800">
                 <p>You can reach out to me via the following methods:</p>
