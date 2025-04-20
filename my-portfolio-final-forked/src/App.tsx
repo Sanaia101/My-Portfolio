@@ -688,31 +688,36 @@ const App: React.FC = () => {
               <span className="font-semibold">Start</span>
             </button>
             <button
-              onPointerDown={() => toggleWindow(setShowResume, showResume, "resume")}
+              onClick={() => setShowResume(true)}
+              onTouchStart={() => setShowResume(false)}
               className="hover:underline"
             >
               💾 Resume
             </button>
             <button
-              onPointerDown={() => toggleWindow(setShowResume, showResume, "resume")}
+              onClick={() => setShowProjects(true)}
+              onTouchStart={() => setShowProjects(false)}
               className="hover:underline"
             >
               📁 Projects
             </button>
             <button
-              onPointerDown={() => toggleWindow(setShowResume, showResume, "resume")}
+              onClick={() => setShowContact(true)}
+              onTouchStart={() => setShowContact(false)}
               className="hover:underline"
             >
               📞 Contact
             </button>
             <button
-              onPointerDown={() => toggleWindow(setShowResume, showResume, "resume")}
+              onClick={() => setShowSkills(true)}
+              onTouchStart={() => setShowSkills(false)}
               className="hover:underline"
             >
               ⚙️ Skills
             </button>
             <button
-              onPointerDown={() => toggleWindow(setShowResume, showResume, "resume")}
+              onClick={() => setShowEducation(true)}
+              onTouchStart={() => setShowEducation(false)}
               className="hover:underline"
             >
               🎓 Education
