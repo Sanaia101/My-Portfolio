@@ -49,6 +49,14 @@ const App: React.FC = () => {
     });
   };
 
+  const handleCloseWindow = (setStateFn: React.Dispatch<React.SetStateAction<boolean>>) => {
+  return (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    setStateFn(false);
+  };
+};
+
+
   const toggleWindow = (
     setter: React.Dispatch<React.SetStateAction<boolean>>,
     current: boolean,
