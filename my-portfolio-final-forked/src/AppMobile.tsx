@@ -578,118 +578,113 @@ const AppMobile: React.FC = () => {
         </div>
       )}
 
-      {showProjects && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-          <div className="bg-white text-left text-sm rounded-xl p-4 shadow-xl border border-pink-300 w-full max-w-md max-h-[85vh] overflow-y-auto space-y-4">
-            <div className="flex justify-between items-center mb-2">
-              <p className="font-semibold text-pink-600">📁 Projects</p>
-              <button
-                onClick={() => setShowProjects(false)}
-                className="text-pink-500 font-bold text-sm"
-              >
-                ✖
-              </button>
-            </div>
+{showProjects && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+    <div className="bg-white text-left text-sm rounded-xl p-4 shadow-xl border border-pink-300 w-full max-w-md max-h-[85vh] overflow-y-auto space-y-4">
+      <div className="flex justify-between items-center mb-2">
+        <p className="font-semibold text-pink-600">📁 Projects</p>
+        <button
+          onClick={() => setShowProjects(false)}
+          className="text-pink-500 font-bold text-sm"
+        >
+          ✖
+        </button>
+      </div>
 
-      <div className="bg-pink-100 border border-pink-300 rounded-2xl p-4 shadow-md space-y-2 mt-6">
-  <p className="text-pink-700 font-bold text-lg">🚀 Sayles Away Travel</p>
-
-  <p className="text-sm text-gray-700 leading-relaxed">
-    A sleek full-stack travel web application — built with 💖 using React, Node.js, MySQL, and AWS.
-  </p>
-
-  <a
-    href="https://saylesawaytravel.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block w-full text-center bg-white text-pink-600 border border-pink-300 rounded-md px-4 py-2 font-semibold text-sm hover:bg-pink-50 transition"
-  >
-    🌐 Visit saylesawaytravel.com
-  </a>
-</div>
-
-
-              <div className="bg-white border border-gray-200 rounded-xl p-3">
-                <p className="font-semibold text-pink-500 mb-1">
-                  🧠 Advanced App Dev Project
-                </p>
-                <p className="text-xs text-gray-600">
-                  A full-stack app combining Node.js and Python with
-                  interactive, responsive design.
-                </p>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-3">
-                <p className="font-semibold text-pink-500 mb-1">
-                  🛠 Info Systems App Development
-                </p>
-                <p className="text-xs text-gray-600">
-                  Created a user-friendly computer parts menu using Python —
-                  simple, fast, functional.
-                </p>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-3">
-                <p className="font-semibold text-pink-500 mb-1">
-                  🧅 Intrusion Detection Lab
-                </p>
-                <p className="text-xs text-gray-600">
-                  Detected & analyzed cyber threats using Wireshark and Security
-                  Onion like a pro 🕵🏽‍♀️
-                </p>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-xl p-3">
-                <p className="font-semibold text-pink-500 mb-1">
-                  🌐 Network Infrastructure Design
-                </p>
-                <p className="text-xs text-gray-600">
-                  Designed a complete ISO-compliant network layout with subnets,
-                  topology, and budgeting.
-                </p>
-              </div>
-            </div>
-
-            <footer className="text-center text-[11px] text-gray-400 italic pt-2 border-t border-pink-200">
-              🚧 Projects built with passion, code, and pastel magic ✨
-            </footer>
-          </div>
+      {/* 🔧 Wrap all project cards in one container */}
+      <div className="space-y-4">
+        <div className="bg-pink-100 border border-pink-300 rounded-2xl p-4 shadow-md space-y-2">
+          <p className="text-pink-700 font-bold text-lg">🚀 Sayles Away Travel</p>
+          <p className="text-sm text-gray-700 leading-relaxed">
+            A sleek full-stack travel web application — built with 💖 using React, Node.js, MySQL, and AWS.
+          </p>
+          <a
+            href="https://saylesawaytravel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center bg-white text-pink-600 border border-pink-300 rounded-md px-4 py-2 font-semibold text-sm hover:bg-pink-50 transition"
+          >
+            🌐 Visit saylesawaytravel.com
+          </a>
         </div>
-      )}
 
-      {showResume && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
-          <div className="bg-white text-left text-sm rounded-xl p-4 shadow-xl border border-pink-300 w-full max-w-md max-h-[85vh] overflow-hidden space-y-4">
-            <div className="flex justify-between items-center mb-2">
-              <p className="font-semibold text-pink-600">💾 Resume</p>
-              <button
-                onClick={() => setShowResume(false)}
-                className="text-pink-500 font-bold text-sm"
-              >
-                ✖
-              </button>
-            </div>
-
-            <div className="flex items-center justify-center h-full">
-              <a
-                href="/SanaiaWashingtonResume.pdf"
-                download
-                className="relative inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-pink-400 bg-pink-200 text-pink-800 font-bold text-xs shadow-md hover:shadow-lg hover:bg-pink-300 transition-all duration-300 group"
-              >
-                <span className="animate-bounce">📥</span>
-                Download Resume
-                <span className="absolute right-2 top-1 text-[10px] text-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  (PDF)
-                </span>
-              </a>
-            </div>
-
-            <footer className="text-center text-[11px] text-gray-400 italic pt-2 border-t border-pink-200">
-              📄 Built with pixels, professionalism & pink power 💖
-            </footer>
-          </div>
+        <div className="bg-white border border-gray-200 rounded-xl p-3">
+          <p className="font-semibold text-pink-500 mb-1">
+            🧠 Advanced App Dev Project
+          </p>
+          <p className="text-xs text-gray-600">
+            A full-stack app combining Node.js and Python with interactive, responsive design.
+          </p>
         </div>
-      )}
+
+        <div className="bg-white border border-gray-200 rounded-xl p-3">
+          <p className="font-semibold text-pink-500 mb-1">
+            🛠 Info Systems App Development
+          </p>
+          <p className="text-xs text-gray-600">
+            Created a user-friendly computer parts menu using Python — simple, fast, functional.
+          </p>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-3">
+          <p className="font-semibold text-pink-500 mb-1">
+            🧅 Intrusion Detection Lab
+          </p>
+          <p className="text-xs text-gray-600">
+            Detected & analyzed cyber threats using Wireshark and Security Onion like a pro 🕵🏽‍♀️
+          </p>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl p-3">
+          <p className="font-semibold text-pink-500 mb-1">
+            🌐 Network Infrastructure Design
+          </p>
+          <p className="text-xs text-gray-600">
+            Designed a complete ISO-compliant network layout with subnets, topology, and budgeting.
+          </p>
+        </div>
+      </div>
+
+      <footer className="text-center text-[11px] text-gray-400 italic pt-2 border-t border-pink-200">
+        🚧 Projects built with passion, code, and pastel magic ✨
+      </footer>
+    </div>
+  </div>
+)}
+
+{showResume && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
+    <div className="bg-white text-left text-sm rounded-xl p-4 shadow-xl border border-pink-300 w-full max-w-md max-h-[85vh] overflow-hidden flex flex-col space-y-4">
+      <div className="flex justify-between items-center">
+        <p className="font-semibold text-pink-600">💾 Resume</p>
+        <button
+          onClick={() => setShowResume(false)}
+          className="text-pink-500 font-bold text-sm"
+        >
+          ✖
+        </button>
+      </div>
+
+      <div className="flex-1 flex items-center justify-center">
+        <a
+          href="/SanaiaWashingtonResume.pdf"
+          download
+          className="relative inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-pink-400 bg-pink-200 text-pink-800 font-bold text-xs shadow-md hover:shadow-lg hover:bg-pink-300 transition-all duration-300 group"
+        >
+          <span className="animate-bounce">📥</span>
+          Download Resume
+          <span className="absolute right-2 top-1 text-[10px] text-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            (PDF)
+          </span>
+        </a>
+      </div>
+
+      <footer className="text-center text-[11px] text-gray-400 italic pt-2 border-t border-pink-200">
+        📄 Built with pixels, professionalism & pink power 💖
+      </footer>
+    </div>
+  </div>
+)}
 
       {showSkills && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
