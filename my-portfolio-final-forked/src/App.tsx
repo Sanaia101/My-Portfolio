@@ -20,6 +20,20 @@ const App: React.FC = () => {
   const [showAiBuddy, setShowAiBuddy] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
 
+  const closeAllWindows = () => {
+  setShowResume(false);
+  setShowProjects(false);
+  setShowContact(false);
+  setShowSkills(false);
+  setShowEducation(false);
+  setShowAiBuddy(false);
+  setShowTrash(false);
+  setShowBrowser(false);
+  setShowDownloads(false);
+  setShowPhotos(false);
+  setShowNotepad(false);
+};
+
   const [aiMessages, setAiMessages] = useState<
     { sender: "user" | "ai"; text: string }[]
   >([]);
@@ -680,7 +694,7 @@ const App: React.FC = () => {
         <div className="flex items-center gap-4">
           <nav className="hidden sm:flex gap-4 text-white font-semibold text-xs">
             <button
-              onClick={() => setShowStartMenu((prev) => !prev)}
+              onClick={closeAllWindows}
               onTouchStart={() => setShowStartMenu(false)}
               className="bg-pink-800 hover:bg-pink-700 px-3 py-1 rounded shadow flex items-center gap-2"
             >
@@ -688,35 +702,35 @@ const App: React.FC = () => {
               <span className="font-semibold">Start</span>
             </button>
             <button
-              onClick={() => setShowResume(true)}
+              on
               onTouchStart={() => setShowResume(false)}
               className="hover:underline"
             >
               💾 Resume
             </button>
             <button
-              onClick={() => setShowProjects(true)}
+              onClick={closeAllWindows}
               onTouchStart={() => setShowProjects(false)}
               className="hover:underline"
             >
               📁 Projects
             </button>
             <button
-              onClick={() => setShowContact(true)}
+              onClick={closeAllWindows}
               onTouchStart={() => setShowContact(false)}
               className="hover:underline"
             >
               📞 Contact
             </button>
             <button
-              onClick={() => setShowSkills(true)}
+              onClick={closeAllWindows}
               onTouchStart={() => setShowSkills(false)}
               className="hover:underline"
             >
               ⚙️ Skills
             </button>
             <button
-              onClick={() => setShowEducation(true)}
+              onClick={closeAllWindows}
               onTouchStart={() => setShowEducation(false)}
               className="hover:underline"
             >
