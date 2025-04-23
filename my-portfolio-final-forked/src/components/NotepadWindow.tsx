@@ -22,7 +22,7 @@ const NotepadWindow: React.FC<NotepadWindowProps> = ({ onClose }) => {
         <div className="p-4 text-gray-900">
           <ul className="list-disc list-inside space-y-2 text-sm">
             <li>
-              <strong>Follow deployment plan</strong> for Sayles Away Travel Web
+              <strong>Push continuous updates</strong> to Sayles Away Travel Web
               Application
             </li>
             <li>
