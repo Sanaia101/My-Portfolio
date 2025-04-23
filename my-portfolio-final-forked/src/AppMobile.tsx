@@ -150,7 +150,7 @@ const AppMobile: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-neutral-800 flex items-center justify-center p-4 font-sans overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      <div className="w-full max-w-[95%] md:max-w-[700px] bg-pink-50 snap-start rounded-[2rem] border-4 border-white ring-4 ring-pink-300 shadow-2xl flex flex-col items-center px-6 pt-6 space-y-4">
+      <div className="w-full max-w-[95vw] md:max-w-[820px] bg-pink-50 snap-start rounded-3xl border-4 border-white ring-4 ring-pink-300 shadow-2xl flex flex-col items-center px-6 pt-8 space-y-6 transition-all duration-500">
         <div className="text-sm text-gray-600 w-full flex justify-end px-2">
           <span>📶 LTE 🔋</span>
         </div>
