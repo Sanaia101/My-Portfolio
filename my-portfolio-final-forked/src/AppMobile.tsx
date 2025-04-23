@@ -179,7 +179,7 @@ const AppMobile: React.FC = () => {
           <div className="col-span-3 bg-pink-200 text-pink-800 text-left rounded-xl p-3 shadow-md">
             <p className="text-xs font-semibold">Reminders</p>
             <ul className="text-xs mt-1 list-disc list-inside space-y-1">
-              <li>✅ Deploy Sayles Away Travel web application</li>
+              <li>✅ Push Updates to Sayles Away Travel web application</li>
               <li>🔐 Practice CTF challenges weekly</li>
               <li>🧱 Build new Lego display (Avengers tower?)</li>
             </ul>
@@ -591,19 +591,23 @@ const AppMobile: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3">
-              <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 animate-pulse">
-                <p className="font-semibold text-pink-700 mb-1">
-                  🚧 Sayles Away Travel
-                </p>
-                <p className="text-xs text-gray-700">
-                  A sleek full-stack travel web app — built with 💖 using React,
-                  Node.js, MySQL, and AWS.
-                </p>
-                <div className="mt-2 p-2 bg-white border border-pink-200 rounded text-center shadow text-xs text-pink-600 font-bold">
-                  🚀 Coming Soon to a Browser Near You...
-                </div>
-              </div>
+      <div className="bg-pink-100 border border-pink-300 rounded-2xl p-4 shadow-md space-y-2 mt-6">
+  <p className="text-pink-700 font-bold text-lg">🚀 Sayles Away Travel</p>
+
+  <p className="text-sm text-gray-700 leading-relaxed">
+    A sleek full-stack travel web application — built with 💖 using React, Node.js, MySQL, and AWS.
+  </p>
+
+  <a
+    href="https://saylesawaytravel.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full text-center bg-white text-pink-600 border border-pink-300 rounded-md px-4 py-2 font-semibold text-sm hover:bg-pink-50 transition"
+  >
+    🌐 Visit saylesawaytravel.com
+  </a>
+</div>
+
 
               <div className="bg-white border border-gray-200 rounded-xl p-3">
                 <p className="font-semibold text-pink-500 mb-1">
