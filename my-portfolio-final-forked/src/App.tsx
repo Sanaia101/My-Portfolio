@@ -702,7 +702,6 @@ const App: React.FC = () => {
               <span className="font-semibold">Start</span>
             </button>
             <button
-              on
               onTouchStart={() => setShowResume(false)}
               className="hover:underline"
             >
