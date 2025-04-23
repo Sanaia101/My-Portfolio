@@ -3,13 +3,16 @@ import App from "./App";
 import AppMobile from "./AppMobile";
 
 const RootResponsiveApp: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const checkSize = () => setIsMobile(window.innerWidth <= 768);
+    checkSize(); // initial check
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
   }, []);
+
+  if (isMobile === null) return null; // or show a loading screen
 
   return isMobile ? <AppMobile /> : <App />;
 };
