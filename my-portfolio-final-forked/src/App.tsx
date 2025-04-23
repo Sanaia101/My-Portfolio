@@ -464,7 +464,15 @@ const App: React.FC = () => {
                   <li>⚙️ Backend: Node.js, Python, MySQL</li>
                   <li>☁️ Deployment: AWS & GitHub</li>
                 </ul>
-
+                  {/* NEW: Live site link */}
+  <a
+    href="https://saylesawaytravel.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full text-center bg-pink-100 border border-pink-300 text-pink-700 font-semibold mt-4 py-2 rounded hover:bg-pink-200 transition"
+  >
+    🌐 Visit saylesawaytravel.com
+  </a>
                 <div className="mt-4 bg-black text-green-500 font-mono text-xs p-3 rounded shadow-inner border border-pink-300">
                   <p>C:\Users\Sanaia&gt; npm start</p>
                   <p>✔ Launching Sayles Away Travel...</p>
