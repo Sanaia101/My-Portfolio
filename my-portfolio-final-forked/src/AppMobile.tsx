@@ -281,7 +281,7 @@ const AppMobile: React.FC = () => {
         <footer className="text-xs text-gray-400 mt-4 italic">
           SoftPastelOS • {new Date().toLocaleDateString()}
         </footer>
-      </div>
+      </div> {
 
       {showCallPad && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
