@@ -694,56 +694,54 @@ const App: React.FC = () => {
         <div className="flex items-center gap-4">
           <nav className="hidden sm:flex gap-4 text-white font-semibold text-xs">
             <button
-              onClick={closeAllWindows}
+              onClick={() => setShowStartMenu((prev) => !prev)}
               onTouchStart={() => setShowStartMenu(false)}
               className="bg-pink-800 hover:bg-pink-700 px-3 py-1 rounded shadow flex items-center gap-2"
             >
               <span className="text-lg">🌸</span>
               <span className="font-semibold">Start</span>
             </button>
+
             <button
-              onTouchStart={() => setShowResume(false)}
-              className="hover:underline"
-            >
-              💾 Resume
-            </button>
-            <button
-              onClick={closeAllWindows}
-              onTouchStart={() => setShowProjects(false)}
-              className="hover:underline"
-            >
-              📁 Projects
-            </button>
-            <button
-              onClick={closeAllWindows}
-              onTouchStart={() => setShowContact(false)}
-              className="hover:underline"
-            >
-              📞 Contact
-            </button>
-            <button
-              onClick={closeAllWindows}
-              onTouchStart={() => setShowSkills(false)}
-              className="hover:underline"
-            >
-              ⚙️ Skills
-            </button>
-            <button
-              onClick={closeAllWindows}
-              onTouchStart={() => setShowEducation(false)}
-              className="hover:underline"
-            >
-              🎓 Education
-            </button>
-          </nav>
-        </div>
-        <span className="opacity-80 pr-2">
-          🕒{" "}
-          {new Date().toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-          })}
-        </span>
+  onClick={() => toggleWindow(setShowResume, showResume, "resume")}
+  onTouchStart={() => toggleWindow(setShowResume, showResume, "resume")}
+  className="hover:underline"
+>
+  💾 Resume
+</button>
+
+<button
+  onClick={() => toggleWindow(setShowProjects, showProjects, "projects")}
+  onTouchStart={() => toggleWindow(setShowProjects, showProjects, "projects")}
+  className="hover:underline"
+>
+  📁 Projects
+</button>
+
+<button
+  onClick={() => toggleWindow(setShowContact, showContact, "contact")}
+  onTouchStart={() => toggleWindow(setShowContact, showContact, "contact")}
+  className="hover:underline"
+>
+  📞 Contact
+</button>
+
+<button
+  onClick={() => toggleWindow(setShowSkills, showSkills, "skills")}
+  onTouchStart={() => toggleWindow(setShowSkills, showSkills, "skills")}
+  className="hover:underline"
+>
+  ⚙️ Skills
+</button>
+
+<button
+  onClick={() => toggleWindow(setShowEducation, showEducation, "education")}
+  onTouchStart={() => toggleWindow(setShowEducation, showEducation, "education")}
+  className="hover:underline"
+>
+  🎓 Education
+</button>
+
       </div>
 
       {/* AI BUDDY WINDOW */}
