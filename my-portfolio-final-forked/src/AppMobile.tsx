@@ -179,7 +179,7 @@ const AppMobile: React.FC = () => {
           <div className="col-span-3 bg-pink-200 text-pink-800 text-left rounded-xl p-3 shadow-md">
             <p className="text-xs font-semibold">Reminders</p>
             <ul className="text-xs mt-1 list-disc list-inside space-y-1">
-              <li>✅ Deploy Sayles Away Travel web application</li>
+              <li>✅ Push updates to Sayles Away Travel Website</li>
               <li>🔐 Practice CTF challenges weekly</li>
               <li>🧱 Build new Lego display (Avengers tower?)</li>
             </ul>
@@ -591,14 +591,14 @@ const AppMobile: React.FC = () => {
               </button>
             </div>
 
-           <div className="space-y-3">
+            <div className="space-y-3">
           <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 animate-pulse">
             <p className="font-semibold text-pink-700 mb-1">
-              🚧 Sayles Away Travel
+              Sayles Away Travel
             </p>
             <p className="text-xs text-gray-700">
               A sleek full-stack travel web app — built with 💖 using React,
-              Node.js, MySQL, and AWS.
+              Node.js, Render, and Squarespace.
             </p>
             <a
               href="https://saylesawaytravel.com"
@@ -606,7 +606,7 @@ const AppMobile: React.FC = () => {
               rel="noopener noreferrer"
               className="mt-2 block p-2 bg-white border border-pink-200 rounded text-center shadow text-xs text-pink-600 font-bold hover:bg-pink-100 transition"
             >
-              🚀 Visit Sayles Away Travel
+              🚀 Visit Sayles Away Travel <span className='ml-2 text-[10px] text-pink-500 bg-white border border-pink-300 px-2 py-0.5 rounded-full'>NEW</span>
             </a>
           </div>
              
