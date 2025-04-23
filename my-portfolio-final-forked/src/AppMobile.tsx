@@ -591,20 +591,25 @@ const AppMobile: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-3">
-              <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 animate-pulse">
-                <a
-  href="https://saylesawaytravel.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="mt-2 block p-2 bg-white border border-pink-200 rounded text-center shadow text-xs text-pink-600 font-bold hover:bg-pink-100 transition"
->
-  🚀 Visit Sayles Away Travel
-</a>
-
-                </div>
-              </div>
-
+           <div className="space-y-3">
+          <div className="bg-pink-100 border border-pink-300 rounded-xl p-3 animate-pulse">
+            <p className="font-semibold text-pink-700 mb-1">
+              🚧 Sayles Away Travel
+            </p>
+            <p className="text-xs text-gray-700">
+              A sleek full-stack travel web app — built with 💖 using React,
+              Node.js, MySQL, and AWS.
+            </p>
+            <a
+              href="https://saylesawaytravel.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 block p-2 bg-white border border-pink-200 rounded text-center shadow text-xs text-pink-600 font-bold hover:bg-pink-100 transition"
+            >
+              🚀 Visit Sayles Away Travel
+            </a>
+          </div>
+             
               <div className="bg-white border border-gray-200 rounded-xl p-3">
                 <p className="font-semibold text-pink-500 mb-1">
                   🧠 Advanced App Dev Project
