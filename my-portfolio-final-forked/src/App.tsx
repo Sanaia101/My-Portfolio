@@ -72,27 +72,43 @@ const App: React.FC = () => {
   }, []);
 
   const getAIResponse = (question: string) => {
-    const q = question.toLowerCase();
-    if (q.includes("name")) return "Her name is Sanaia Washington.";
-    if (q.includes("college") || q.includes("school"))
-      return "She studies at the University of Houston, majoring in Computer Information Systems.";
-    if (q.includes("graduate")) return "She is graduating in May 2025!";
-    if (q.includes("gpa"))
-      return "Her current GPA is 3.4 with a 3.9 in her major.";
-    if (q.includes("internship"))
-      return "She interned for two years with the IT team at Flynn Group, supporting Arby's.";
-    if (q.includes("security"))
-      return "She’s currently preparing for her CompTIA Security+ certification.";
-    if (q.includes("goal"))
-      return "Her goal is to get a Master's degree in Cybersecurity.";
-    if (q.includes("skills"))
-      return "She’s skilled in React, EJS, Vue, and full-stack development.";
-    if (q.includes("food") || q.includes("favorite food"))
-      return "Sanaia’s favorite foods are Asian cuisine, soul food, and wings!";
-    if (q.includes("hobby") || q.includes("fun") || q.includes("free time"))
-      return "Sanaia enjoys crocheting, reading, traveling, and building Legos in her free time!";
-    return "Sorry, I don’t have that info yet! 🌸";
+  const q = question.toLowerCase();
+
+  const keywords = {
+    name: ["name", "who is she"],
+    college: ["college", "school", "university"],
+    graduate: ["graduate", "graduation", "when finish"],
+    gpa: ["gpa", "grades", "grade point"],
+    internship: ["internship", "work experience", "flynn"],
+    security: ["security", "comptia", "certification"],
+    goal: ["goal", "ambition", "career plan", "future"],
+    skills: ["skills", "tech", "tools", "frameworks"],
+    food: ["food", "favorite food", "eat", "cuisine"],
+    hobby: ["hobby", "fun", "free time", "likes", "interests"],
+    travel: ["travel", "places", "vacation", "where has she been"],
+    personality: ["personality", "vibe", "how is she", "what is she like"],
+    project: ["portfolio", "project", "website", "app"],
   };
+
+  const matches = (list: string[]) => list.some((k) => q.includes(k));
+
+  if (matches(keywords.name)) return "Her name is Sanaia Washington.";
+  if (matches(keywords.college)) return "She studies at the University of Houston, majoring in Computer Information Systems.";
+  if (matches(keywords.graduate)) return "She is graduating in May 2025!";
+  if (matches(keywords.gpa)) return "Her GPA is 3.4 overall and 3.9 in her major.";
+  if (matches(keywords.internship)) return "She interned for two years with the IT team at Flynn Group, supporting Arby's.";
+  if (matches(keywords.security)) return "She's currently preparing for her CompTIA Security+ certification.";
+  if (matches(keywords.goal)) return "Her goal is to pursue a Master’s degree in Cybersecurity and advance in the security field.";
+  if (matches(keywords.skills)) return "She’s skilled in React, EJS, Vue, Tailwind CSS, Node.js, MySQL, and full-stack development.";
+  if (matches(keywords.food)) return "Sanaia loves Asian cuisine, soul food, and wings — especially spicy ones!";
+  if (matches(keywords.hobby)) return "In her free time, she crochets, reads, travels, and builds Lego sets — seriously, she's got skills.";
+  if (matches(keywords.travel)) return "She’s traveled to Jamaica, Mexico, Hawaii, and several Caribbean islands.";
+  if (matches(keywords.personality)) return "She’s creative, driven, fun to talk to, and always looking for new ways to express herself.";
+  if (matches(keywords.project)) return "She built a full-stack travel website and a retro portfolio with draggable windows and an AI buddy — you're talking to it right now!";
+
+  return "Sorry, I don’t have that info yet! 🌸";
+};
+
 
   const handleUserMessage = () => {
     if (!userInput.trim()) return;
