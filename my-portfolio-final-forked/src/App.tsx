@@ -565,6 +565,7 @@ const App: React.FC = () => {
           </Draggable>
         </div>
       )}
+
       {showNotepad && (
   <div
     style={{ zIndex: zIndices["notepad"] || 1 }}
@@ -582,12 +583,13 @@ const App: React.FC = () => {
           </button>
         </div>
         <div className="p-4 text-sm text-gray-800 overflow-y-auto h-full">
-          <NotepadWindow />
+          <NotepadWindow onClose={() => setShowNotepad(false)} />
         </div>
       </div>
     </Draggable>
   </div>
 )}
+
 
 
       {showEducation && (
