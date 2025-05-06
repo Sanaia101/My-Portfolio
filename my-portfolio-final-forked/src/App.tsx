@@ -565,6 +565,30 @@ const App: React.FC = () => {
           </Draggable>
         </div>
       )}
+      {showNotepad && (
+  <div
+    style={{ zIndex: zIndices["notepad"] || 1 }}
+    onMouseDown={() => bringToFront("notepad")}
+  >
+    <Draggable handle=".window-header">
+      <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] h-[22rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
+        <div className="window-header bg-pink-500 text-white p-3 flex justify-between items-center text-base font-semibold">
+          <span>📝 Notepad</span>
+          <button
+            onClick={() => setShowNotepad(false)}
+            className="text-white font-bold"
+          >
+            ✖
+          </button>
+        </div>
+        <div className="p-4 text-sm text-gray-800 overflow-y-auto h-full">
+          <NotepadWindow />
+        </div>
+      </div>
+    </Draggable>
+  </div>
+)}
+
 
       {showEducation && (
         <div
@@ -653,20 +677,6 @@ const App: React.FC = () => {
         </div>
       )}
 
-
-
-    {showNotepad && (
-  <div
-    style={{ zIndex: zIndices["notepad"] || 1 }}
-    onMouseDown={() => bringToFront("notepad")}
-  >
-    <Draggable handle=".window-header">
-      <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
-        <NotepadWindow onClose={() => setShowNotepad(false)} />
-      </div>
-    </Draggable>
-  </div>
-)}
 
 
 
