@@ -639,7 +639,19 @@ const App: React.FC = () => {
 
 
 
-    
+    {showNotepad && (
+  <div
+    style={{ zIndex: zIndices["notepad"] || 1 }}
+    onMouseDown={() => bringToFront("notepad")}
+  >
+    <Draggable handle=".window-header">
+      <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[28rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
+        <NotepadWindow onClose={() => setShowNotepad(false)} />
+      </div>
+    </Draggable>
+  </div>
+)}
+
 
 
       {/* TASKBAR */}
