@@ -6,7 +6,7 @@ interface PhotosWindowProps {
   onClose: () => void;
 }
 
-const photoPaths = ["/Christmas.PNG", "/braids.png"];
+const photoPaths = ["/cap.png", "/hand.png"];
 
 const PhotosWindow: React.FC<PhotosWindowProps> = ({ onClose }) => {
   const [index, setIndex] = useState(0);
