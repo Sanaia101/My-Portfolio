@@ -78,26 +78,28 @@ const AppMobile: React.FC = () => {
     skills: ["skills", "tech", "tools", "frameworks"],
     food: ["food", "favorite food", "eat", "cuisine"],
     hobby: ["hobby", "fun", "free time", "likes", "interests"],
-    travel: ["travel", "places", "vacation", "where has she been"],
+    travel: ["favorite places to go", "travel", "places", "vacation", "where has she been"],
     personality: ["personality", "vibe", "how is she", "what is she like"],
-    project: ["portfolio", "project", "website", "app"],
+    project: ["development", "portfolio", "project", "website", "app"],
+    color: ["favorite color", "color", "pink", "yellow"], 
   };
 
   const matches = (list: string[]) => list.some((k) => q.includes(k));
 
   if (matches(keywords.name)) return "Her name is Sanaia Washington.";
-  if (matches(keywords.college)) return "She studies at the University of Houston, majoring in Computer Information Systems.";
-  if (matches(keywords.graduate)) return "She is graduating in May 2025!";
+  if (matches(keywords.college)) return "She recently obtained her Bachelor's of Science degree from the University of Houston, with a major in Computer Information Systems.";
+  if (matches(keywords.graduate)) return "She recently graduated in May 2025!";
   if (matches(keywords.gpa)) return "Her GPA is 3.4 overall and 3.9 in her major.";
   if (matches(keywords.internship)) return "She interned for two years with the IT team at Flynn Group, supporting Arby's.";
   if (matches(keywords.security)) return "She's currently preparing for her CompTIA Security+ certification.";
-  if (matches(keywords.goal)) return "Her goal is to pursue a Master’s degree in Cybersecurity and advance in the security field.";
+  if (matches(keywords.goal)) return "Her goal is to pursue a Master’s degree in Cybersecurity and advance in the security field. She also is very passionate about web development with hopes to integrate that into her career.";
   if (matches(keywords.skills)) return "She’s skilled in React, EJS, Vue, Tailwind CSS, Node.js, MySQL, and full-stack development.";
-  if (matches(keywords.food)) return "Sanaia loves Asian cuisine, soul food, and wings — especially spicy ones!";
-  if (matches(keywords.hobby)) return "In her free time, she crochets, reads, travels, and builds Lego sets — seriously, she's got skills.";
-  if (matches(keywords.travel)) return "She’s traveled to Jamaica, Mexico, Hawaii, and several Caribbean islands.";
+  if (matches(keywords.food)) return "Sanaia loves Asian cuisine, soul food, and wings, especially spicy ones!";
+  if (matches(keywords.hobby)) return "In her free time, she crochets, reads, travels, and builds Lego sets. ";
+  if (matches(keywords.travel)) return "She’s traveled to Jamaica, Mexico, Hawaii, Punta Cana, and several Caribbean islands.";
   if (matches(keywords.personality)) return "She’s creative, driven, fun to talk to, and always looking for new ways to express herself.";
-  if (matches(keywords.project)) return "She built a full-stack travel website and a retro portfolio with draggable windows and an AI buddy — you're talking to it right now!";
+  if (matches(keywords.project)) return "She built a full-stack travel website and a portfolio with an AI buddy — you're talking to it right now!";
+  if (matches(keywords.color)) return "She has two favorite colors: rose gold and yellow!";
 
   return "Sorry, I don’t have that info yet! 🌸";
 };
