@@ -106,7 +106,7 @@ const App: React.FC = () => {
   if (matches(keywords.travel)) return "She’s traveled to Jamaica, Mexico, Hawaii, Punta Cana, and several Caribbean islands.";
   if (matches(keywords.personality)) return "She’s creative, driven, fun to talk to, and always looking for new ways to express herself.";
   if (matches(keywords.project)) return "She built a full-stack travel website and a portfolio with an AI buddy — you're talking to it right now!";
-  if (matches)keywords.color)) return "She has two favorite colors: rose gold and yellow!";
+  if (matches(keywords.color)) return "She has two favorite colors: rose gold and yellow!";
 
   return "Sorry, I don’t have that info yet! 🌸";
 };
