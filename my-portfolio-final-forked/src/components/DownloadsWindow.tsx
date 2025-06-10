@@ -11,7 +11,7 @@ const DownloadsWindow: React.FC<DownloadsWindowProps> = ({ onClose }) => {
       <div className="absolute top-28 left-1/2 transform -translate-x-1/2 w-[34rem] bg-white border border-pink-300 shadow-2xl rounded-xl z-50 overflow-hidden">
         {/* Header */}
         <div className="window-header bg-pink-600 text-white p-3 flex justify-between items-center text-sm font-semibold">
-          <span>📂 Retro Downloads</span>
+          <span>📂 Downloads</span>
           <button
   onPointerDown={onClose}
   className="text-white font-bold close-btn"
@@ -24,7 +24,7 @@ const DownloadsWindow: React.FC<DownloadsWindowProps> = ({ onClose }) => {
         {/* Content */}
         <div className="bg-white p-4 text-sm text-gray-800 font-mono h-[24rem] overflow-y-auto">
           <p className="mb-3">
-            Choose your favorite Y2K-era downloads below 💾👇
+            Choose your favorite downloads below 💾👇
           </p>
           <ul className="space-y-2">
             <li>
