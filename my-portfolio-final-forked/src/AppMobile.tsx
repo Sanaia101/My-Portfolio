@@ -47,7 +47,7 @@ const AppMobile: React.FC = () => {
     "Booting Sanaia's iOS...",
     "Loading widgets ✔",
     "Applying aesthetic theme ✔",
-    "Welcome to SoftPastelOS 🌸",
+    "Welcome to SanaiaOS 🌸",
     "C:\\SANAIA-MOBILE>_",
   ];
 
